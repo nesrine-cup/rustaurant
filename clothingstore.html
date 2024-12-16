@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            color: #fff; /* Change text color to white for better contrast */
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .logo img {
+            height: 120px; /* Increased height for better visibility */
+            width: auto;
+        }
+
+        .search {
+            float: right;
+            margin-top: 5px;
+        }
+
+        .search input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            width: 250px;
+        }
+
+        .search button {
+            background-color: hsl(240, 1%, 13%);
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+       
+
+        .nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #161617;
+            color: #fff;
+        }
+
+        .main-content {
+            padding: 20px;
+            background-color: rgba(18, 16, 16, 0.9); /* Semi-transparent white */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .black-friday-background {
+            background-image: url('https://imgur.com/BXkjrEE.gif'); /* Use the hosted image URL */
+            background-size: cover; /* Cover the whole section */
+            background-position: center; /* Center the image */
+            padding: 80px 50px; /* Original padding for better spacing */
+            border-radius: 20px; /* Optional: round the corners */
+            text-align: center; /* Center the text */
+            position: relative; /* Position relative for layering */
+            z-index: 2; /* Ensure it appears above the new background */
+        }
+
+        .black-friday-banner {
+            color: rgb(34, 27, 27); /* Set the title color to black */
+            text-align: center;
+            font-size: 3em;
+            font-weight: bold;
+            margin: 0; /* Reset margin */
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Shadow for better visibility */
+        }
+
+        .image-section {
+            height: 400px; /* Set the height for each image section */
+            background-size: cover;
+            background-position: center;
+            margin-top: 20px;
+            position: relative; /* Position relative for layering */
+        }
+
+        .image1 {
+    background-image: url('file:///C:/Users/ayoo%20info/Downloads/pixelcut-export.png'); /* Local path to your PNG image */
+    background-size: contain; /* Ensure the whole image is visible */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-position: top 18% right 0; /* Center the image */
+    height: 650px; /* Set height */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center vertically */
+    justify-content: flex-start; /* Align items to the start (left) */
+    padding-left: 65px; /* Optional: add some padding to the left */
+    color: #1a0101; /* Text color */
+    font-size: 5em; /* Text size */
+    text-align: left; /* Align text to the left */
+    position: relative; /* Position relative for layering */
+    font-family: 'Playfair Display', serif; /* Use the beautiful font */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7), 0 0 25px rgba(0, 0, 0, 0.5); /* Add text shadow for styling */
+}
+
+        .image2 {
+            background-image: url('https://via.placeholder.com/1200x400/33FF57/FFFFFF?text=Image+2'); /* Replace with your image URL */
+            position: relative; /* Ensure it can be layered */
+            height: 600px; /* Set height for the video section */
+            overflow: hidden; /* Hide overflow */
+        }
+
+        .image2 video {
+            border-radius: 10px;
+            width: 100%; /* Make video responsive */
+            height: 200%; /* Fill the section */
+            object-fit: cover; /* Cover the section without distortion */
+        }
+
+        .video-overlay {
+            position: absolute; /* Position it absolutely within the parent */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust position to truly center */
+            color: #fff; /* Text color */
+            font-size: 3em; /* Adjust font size as needed */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+            z-index: 10; /* Ensure it appears above the video */
+        }
+       
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid #ddd;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .bottom-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .bottom-nav li {
+            flex: 1;
+            text-align: center;
+        }
+
+        .bottom-nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .bottom-nav a:hover {
+            background-color: #161617;
+            color: #fff;
+        }
+
+        .bottom-nav a i {
+            margin-right: 5px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .search {
+                float: none;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .search input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .black-friday-banner {
+                font-size: 2em; /* Adjust font size for smaller screens */
+            }
+
+            .image-section {
+                height: 200px; /* Adjust height for smaller screens */
+            }
+        }
+       
+            /* General Footer Styles */
+.section-p1 {
+    background-color: #d4d4d4; /* Light background color */
+    padding: 40px 20px; /* Padding for top/bottom and left/right */
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: space-between; /* Space between columns */
+    align-items: flex-start; /* Align items at the start */
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+/* Column Styles */
+.col {
+    flex: 1; /* Equal flex basis for columns */
+    min-width: 200px; /* Minimum width for responsiveness */
+    margin: 10px; /* Margin around columns */
+}
+
+.logo {
+    max-width: 150px; /* Limit logo size */
+    margin-bottom: 20px; /* Space below logo */
+}
+
+h4 {
+    font-size: 18px; /* Font size for headings */
+    margin-bottom: 10px; /* Space below headings */
+    color: #333; /* Dark color for headings */
+}
+
+p {
+    margin: 5px 0; /* Margin for paragraphs */
+    color: #555; /* Slightly lighter color for text */
+}
+
+/* Links Styles */
+a {
+    display: block; /* Block display for links */
+    color: #28313b; /* Bootstrap primary color */
+    text-decoration: none; /* Remove underline */
+    margin: 5px 0; /* Margin for links */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+a:hover {
+    color: #0056b3; /* Darker color on hover */
+}
+
+/* Social Media Icons */
+.icon {
+    display: flex; /* Flexbox for icons */
+    gap: 15px; /* Space between icons */
+    margin-top: 10px; /* Space above icons */
+}
+
+.icon i {
+    font-size: 20px; /* Icon size */
+    color: #555; /* Icon color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.icon i:hover {
+    color: #29333d; /* Change color on hover */
+}
+
+/* Install App Section */
+.install {
+    text-align: center; /* Center align install section */
+}
+
+.install img {
+    max-width: 120px; /* Limit image size */
+    margin: 10px; /* Space around images */
+}
+
+/* Payment Gateway Image */
+img[src*="pay"] {
+    max-width: 150px; /* Limit payment image size */
+    margin-top: 10px; /* Space above payment image */
+}
+
+/* Copyright Styles */
+.copyright {
+    text-align: center; /* Center align copyright text */
+    margin-top: 20px; /* Space above copyright */
+    color: #777; /* Lighter color for copyright */
+    font-size: 14px; /* Font size for copyright */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .section-p1 {
+        flex-direction: column; /* Stack columns on small screens */
+        align-items: center; /* Center align items */
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="C:\Users\ayoo info\Downloads\5d5a81f6c620c839afb8e11733061ff6.png" alt="Your Company Logo">
+            </div>
+            <div class="search">
+                <label for="search-input" class="visually-hidden">Search</label>
+                <input type="text" id="search-input" placeholder="Search...">
+                <button type="button" aria-label="Search">Search</button>
+            </div>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#"> Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="new-background"></div> <!-- New background div -->
+    <main class="container main-content black-friday-background">
+        <h1 class="black-friday-banner"></h1> <!-- Title added back -->
+    </main>
+    <div class="image-section image2">
+        <video controls autoplay loop muted>
+            <source src="C:\Users\ayoo info\Videos\get.1733169596917.publer.io.mp4" type="video/mp4"> <!-- Replace with your video path -->
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">VIBRANT ENERGY</div> <!-- Text overlay for the video -->
+    </div> <!-- Second additional image with video -->
+    <div class="image-section image1">
+         <!-- Text overlay for Image 1 -->
+        <p>From leather bags to <br>sparkling Dresses-give <br>the gift of style</p>
+      
+    </div> <!-- First additional image -->
+    <div class="bottom-nav">
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Acheter</a></li>
+            <li><a href="categories.html"><i class="fas fa-th-list"></i> Categories</a></li>
+            <li><a href="panier.html"><i class="fas fa-shopping-basket"></i> Panier</a></li>
+            <li><a href="moi.html"><i class="fas fa-user"></i> Moi</a></li>
+        </ul>
+    </div>
+    
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="C:\Users\ayoo info\Downloads\5d5a81f6c620c839afb8e11733061ff6.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> algeria - 54840</p>
+            <p><strong>Phone:</strong> +213 555 123</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="" alt="">
+                <img src="C:\Users\ayoo info\Pictures\app_store_optimisation_1-768x768.webp" alt="">
+            </div>
+            <p>Secured Payment Gateway</p>
+            <img src="C:\Users\ayoo info\Pictures\Payement-1-edit.png" alt="">
+        </div>
+        <div class="copyright">
+            <p> nesrine| All Rights Reserved | &#169; 2024</p>
+        </div>
+    </footer>
+</body>
+</html>
